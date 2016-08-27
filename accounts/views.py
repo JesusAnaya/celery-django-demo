@@ -16,4 +16,4 @@ class RegisterUserView(CreateView):
 class UserDetailView(DetailView):
     template_name = 'accounts/retrive.html'
     model = User
-
+    context_object_name = 'user'

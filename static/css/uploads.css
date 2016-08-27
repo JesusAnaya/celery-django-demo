@@ -1,0 +1,17 @@
+
+.original-image {
+    max-width: 650px;
+}
+
+.thumbnail-list {
+    list-style: none;
+    display: inline-flex;
+}
+
+.thumbnail-description {
+    text-align: center;
+}
+
+.thumbnail-description > p {
+    font-size: 14px;
+}

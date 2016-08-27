@@ -10,3 +10,4 @@ static_root
 media_root
 
 *.sqlite3
+*.pid

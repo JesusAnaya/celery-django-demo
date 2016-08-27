@@ -1,5 +1,4 @@
 from django.conf import settings
-from django.template import Context
 from django.template.loader import render_to_string, get_template
 from django.core.mail import EmailMessage
 import logging
@@ -17,7 +16,7 @@ def send_welcome_email(user):
         'user': user
     }
 
-    message = get_template('emails/welcome.html').render(Context(context))
+    message = get_template('emails/welcome.html').render(context)
     msg = EmailMessage(subject, message, to=to, from_email=from_email)
     msg.content_subtype = 'html'
 

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'sorl.thumbnail',
     'djcelery',
     'accounts',
     'uploads',
@@ -130,5 +131,10 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media_root")
 
-# Celery looader
+# Celery settings
+CELERY_RESULT_BACKEND = 'djcelery.backends.database:DatabaseBackend'
+CELERY_TASK_RESULT_EXPIRES = 7 * 86400
+CELERY_SEND_EVENTS = True
+
 djcelery.setup_loader()
+

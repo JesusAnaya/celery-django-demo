@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/uploads.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<header class="jumbotron hero-spacer">
+    <h2>Image added</h2>
+
+    <p>
+        <img src="{{ upload.image.url }}" class="img-rounded original-image">
+    </p>
+    <p>
+    {% if upload.thumbnails %}
+        <strong>Thumbnails</strong>
+        <ul class="thumbnail-list">
+
+            {% for file in upload.thumbnails %}
+            <li>
+                <div class="thumbnail-description">
+                    <img src="{{ file.thumb.url }}" class="img-thumbnail">
+                    <p>{{ file.size }}</p>
+                </div>
+
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <strong>Thumbnails are not ready yet!</strong>
+    {% endif %}
+    </p>
+
+    <a href="{% url 'image-add' %}" class="btn btn-primary">Add new image</a>
+</header>
+
+{% endblock %}

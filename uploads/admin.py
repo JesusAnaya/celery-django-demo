@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import UploadImage, ImageThumbnail
 
-# Register your models here.
+
+admin.site.register(UploadImage)
+admin.site.register(ImageThumbnail)
