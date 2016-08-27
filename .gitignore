@@ -1,0 +1,12 @@
+.DS_Store
+
+*.pyc
+*.pyo
+
+*.jpg
+
+settings_local.py
+static_root
+media_root
+
+*.sqlite3

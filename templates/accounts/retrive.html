@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<header class="jumbotron hero-spacer">
+    <h2>User added</h2>
+
+    <ul>
+        <li>Name: {{ user.get_full_name }}</li>
+        <li>Email: {{ user.email }}</li>
+    </ul>
+    <a href="{% url 'user-create' %}" class="btn">Add new user</a>
+</header>
+
+{% endblock %}
